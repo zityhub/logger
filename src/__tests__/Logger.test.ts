@@ -1,5 +1,5 @@
 import { vi, describe, it, expect } from 'vitest'
-import Logger from '../Logger.js'
+import Logger from '../Logger'
 
 const mockedPino = { debug: vi.fn(), info: vi.fn(), error: vi.fn() }
 vi.mock('pino', async () => {
