@@ -36,6 +36,7 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v6
+      - uses: pnpm/action-setup@v4
       - name: Use Node.js
         uses: actions/setup-node@v6
         with:
