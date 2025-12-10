@@ -3,13 +3,13 @@
   "version": "0.1.0",
   "description": "",
   "type": "module",
-  "main": "./dist/index.js",
-  "types": "./dist/index.d.ts",
+  "main": "./dist/Logger.js",
+  "types": "./dist/Logger.d.ts",
   "exports": {
     ".": {
-      "types": "./dist/index.d.ts",
-      "import": "./dist/index.js",
-      "default": "./dist/index.js"
+      "types": "./dist/Logger.d.ts",
+      "import": "./dist/Logger.js",
+      "default": "./dist/Logger.js"
     }
   },
   "scripts": {
