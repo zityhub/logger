@@ -1,4 +1,4 @@
-import Logger from '../Logger.ts'
+import Logger from '../Logger'
 
 const env = process.env.NODE_ENV
 const logger = new Logger(`manual-test-${env}-async`, false)
