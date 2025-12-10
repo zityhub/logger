@@ -4,7 +4,7 @@
     "outDir": "dist",
     "declaration": true,
     "declarationMap": true,
-    "emitDeclarationOnly": true
+    "allowImportingTsExtensions": false
   },
   "include": ["src/**/*"],
   "exclude": ["node_modules", "src/**/__tests__", "src/**/manual-tests", "vitest.config.ts"]
