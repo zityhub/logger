@@ -11,7 +11,30 @@ export default class Logger {
 
   private getLogger(name: string, sync: boolean) {
     if (process.env.NODE_ENV === 'production') {
-      return pino({ name, level: 'info' }, pino.destination({ sync, ...(!sync && { minLength: 4096 }) }))
+      return pino(
+        {
+          name,
+          level: 'info',
+          messageKey: 'message',
+          formatters: {
+            level(label, number) {
+              const levelToSeverity = {
+                trace: 'DEBUG',
+                debug: 'DEBUG',
+                info: 'INFO',
+                warn: 'WARNING',
+                error: 'ERROR',
+                fatal: 'CRITICAL'
+              } as const
+              return {
+                severity: levelToSeverity[label as keyof typeof levelToSeverity] || levelToSeverity['info'],
+                level: number
+              }
+            }
+          }
+        },
+        pino.destination({ sync, ...(!sync && { minLength: 4096 }) })
+      )
     }
     return pino({
       name: `${name}-dev`,
