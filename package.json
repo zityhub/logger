@@ -1,7 +1,7 @@
 {
   "name": "@zityhub/logger",
   "repository": "https://github.com/zityhub/logger",
-  "version": "1.0.1-beta.0",
+  "version": "1.0.1-beta.1",
   "description": "",
   "type": "module",
   "main": "./dist/cjs/Logger.js",
