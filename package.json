@@ -1,22 +1,24 @@
 {
   "name": "@zityhub/logger",
   "repository": "https://github.com/zityhub/logger",
-  "version": "1.0.0",
+  "version": "1.0.1-beta.2",
   "description": "",
   "type": "module",
-  "main": "./dist/Logger.js",
-  "types": "./dist/Logger.d.ts",
+  "main": "./dist/cjs/Logger.js",
+  "module": "./dist/esm/Logger.js",
+  "types": "./dist/types/Logger.d.ts",
   "exports": {
     ".": {
-      "types": "./dist/Logger.d.ts",
-      "import": "./dist/Logger.js",
-      "default": "./dist/Logger.js"
+      "import": "./dist/esm/Logger.js",
+      "require": "./dist/cjs/Logger.js"
     }
   },
   "scripts": {
     "lint": "eslint src",
     "test": "vitest --run src",
-    "build": "tsc -p tsconfig.build.json",
+    "build:esm": "tsc -p tsconfig.esm.json",
+    "build:cjs": "tsc -p tsconfig.cjs.json",
+    "build": "npm run build:esm && npm run build:cjs",
     "test:manual:dev": "cross-env NODE_ENV=development tsx src/manual-tests/run-logger.ts",
     "test:manual:production": "cross-env NODE_ENV=production tsx src/manual-tests/run-logger.ts",
     "test:manual:production:async": "cross-env NODE_ENV=production tsx src/manual-tests/run-logger-async.ts"
