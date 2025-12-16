@@ -1,14 +1,13 @@
 {
+  "extends": "./tsconfig.base.json",
   "compilerOptions": {
-    "target": "ES2020",
-    "strict": true,
-    "esModuleInterop": true,
-    "skipLibCheck": true
+    "module": "ESNext",
+    "moduleResolution": "node",
+    "types": ["vitest/globals"],
+    "noEmit": true
   },
-  "exclude": [
-    "node_modules",
-    "src/**/__tests__",
-    "src/**/manual-tests",
+  "include": [
+    "src/**/*.ts",
     "vitest.config.ts"
   ]
 }
