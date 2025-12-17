@@ -4,13 +4,13 @@
   "version": "2.0.1",
   "description": "",
   "type": "module",
-  "main": "./dist/cjs/Logger.js",
+  "main": "./dist/cjs/Logger.cjs",
   "module": "./dist/esm/Logger.js",
   "types": "./dist/types/Logger.d.ts",
   "exports": {
     ".": {
       "import": "./dist/esm/Logger.js",
-      "require": "./dist/cjs/Logger.js"
+      "require": "./dist/cjs/Logger.cjs"
     }
   },
   "scripts": {
