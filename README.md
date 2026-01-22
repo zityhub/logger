@@ -2,7 +2,7 @@
 
 ## Installation
 
-Install it as a development dependency:
+Install it as a dependency:
 
 ```sh
 pnpm add @zityhub/logger
@@ -11,7 +11,7 @@ pnpm add @zityhub/logger
 ## Usage
 
 ```
-import { Logger } from '@zityhub/logger';
+import Logger from '@zityhub/logger';
 
 const log = new Logger('my-service', true);
 
