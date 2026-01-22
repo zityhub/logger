@@ -10,7 +10,8 @@
   "exports": {
     ".": {
       "import": "./dist/esm/Logger.js",
-      "require": "./dist/cjs/Logger.cjs"
+      "require": "./dist/cjs/Logger.cjs",
+      "types": "./dist/types/Logger.d.ts"
     }
   },
   "scripts": {
