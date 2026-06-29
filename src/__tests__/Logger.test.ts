@@ -1,4 +1,5 @@
 import { vi, describe, it, expect } from 'vitest'
+import pino from 'pino'
 import Logger from '../Logger'
 
 const mockedPino = { debug: vi.fn(), info: vi.fn(), error: vi.fn() }
@@ -8,6 +9,9 @@ vi.mock('pino', async () => {
 
 describe('Logger', () => {
   const logger = new Logger('test-logger')
+  it('should be fully silent in test env', () => {
+    expect(pino).toHaveBeenCalledWith({ name: 'test-logger-test', level: 'silent' })
+  })
   it('should log debug', () => {
     logger.debug('debug message')
     expect(mockedPino.debug).toHaveBeenCalledWith('debug message')
