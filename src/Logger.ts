@@ -10,6 +10,9 @@ export default class Logger {
   }
 
   private getLogger(name: string, sync: boolean) {
+    if (process.env.NODE_ENV === 'test') {
+      return pino({ name: `${name}-test`, level: 'silent' })
+    }
     if (process.env.NODE_ENV === 'production') {
       return pino(
         {
